@@ -918,6 +918,7 @@ min-height: 154px;
 .genesis-nav-menu .sub-menu {
 	left: -9999px;
 	opacity: 0;
+	margin-top: -4px;
 	position: absolute;
 	-webkit-transition: opacity .4s ease-in-out;
 	-moz-transition:    opacity .4s ease-in-out;
