@@ -454,7 +454,7 @@ th {
 
 .content {
 	float: right;
-	width: 800px;
+	width: 770px;
 }
 
 .content-sidebar .content,
@@ -907,6 +907,7 @@ min-height: 154px;
 	padding: 30px 24px;
 	font-size: 20px;
 	text-transform: uppercase;
+	text-shadow: 0 1px 1px #000;
 }
 
 .genesis-nav-menu a:hover,
@@ -938,7 +939,8 @@ min-height: 154px;
 	padding: 20px;
 	position: relative;
 	text-transform: capitalize;
-	width: 200px;
+	text-shadow: 0 1px 0 #aaa;
+	width: 230px;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
@@ -1008,7 +1010,6 @@ min-height: 154px;
 
 .nav-primary .genesis-nav-menu a {
 	color: #fff;
-	text-shadow: 0 1px 1px #000;
 	font-family: 'Oswald', sans-serif;
 }
 
