@@ -728,6 +728,7 @@ img.alignright,
 	-ms-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
+	z-index: 999999;
 }
 
 
@@ -1493,6 +1494,18 @@ div#genesis-responsive-slider {
     color: #fff;
     background: #126bcb;
     text-shadow: 1px 1px 0 #0b3a84;
+}
+
+/* Footer */
+
+.site-container .fa-chevron-circle-up {
+    position: fixed;
+    right: 10px;
+    z-index: 999;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
 }
 
 

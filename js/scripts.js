@@ -21,19 +21,36 @@ $( '.live-tv, .fa-times-circle' ).on( 'click', function( e ) {
 	});
 
 // Sticky menu
-
 $( window ).scroll( function () {
 	
 	$nav_primary = $('.nav-primary');
 	$sticky = $('.menu-primary');
 	$nav_offset = $nav_primary.offset().top + $nav_primary.height();
+	$win_middle = $('.site-inner').height() / 2;
 	$win_scrolltop = $( window ).scrollTop();
+
+	console.log( $win_middle );
 
 	if( $win_scrolltop >= $nav_offset ) {
 		$sticky.addClass('sticky');
+		// $backtotop.fadeIn( 'slow' );
 	} else {
 		$sticky.removeClass('sticky');
+		// $backtotop.fadeOut();
 	}
+
+	if( $win_scrolltop >= $win_middle ) {
+		$backtotop.fadeIn();
+	} else {
+		$backtotop.fadeOut();
+	}
+});
+
+// Back to top
+$('.site-inner').after('<i class="fa fa-chevron-circle-up fa-2x"></i>');
+$backtotop = $('.fa-chevron-circle-up');
+$backtotop.on( 'click', function() {
+	$('html, body').animate({scrollTop: 0 }, 'slow');
 });
 
 });
