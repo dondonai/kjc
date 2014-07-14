@@ -1039,7 +1039,7 @@ min-height: 154px;
 
 .entry {
 	margin-bottom: 40px;
-	padding: 50px 60px;
+	padding: 20px 40px;
 }
 
 .content .entry {
@@ -1218,8 +1218,8 @@ li.comment {
 
 .sidebar .widget {
 	background-color: #fff;
-	margin-bottom: 40px;
-	padding: 40px;
+	/* margin-bottom: 40px; */
+	padding: 20px 40px;
 }
 
 
