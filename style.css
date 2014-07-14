@@ -720,6 +720,14 @@ img.alignright,
 }
 
 .sticky {
+	background: #2f3641;
+	position: fixed;
+	top: 0;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 
 
@@ -893,7 +901,8 @@ min-height: 154px;
 	clear: both;
 	font-size: 16px;
 	line-height: 1;
-	width: 100%;
+	width: 1140px;
+	box-shadow: 0 -4px 0 0 #000 inset;
 }
 
 .genesis-nav-menu .menu-item {
@@ -1006,6 +1015,7 @@ min-height: 154px;
 	background-color: #2f3641;
 	box-shadow: 0 -4px 0 0 #000 inset;
 	position: relative;
+	min-height: 80px;
 }
 
 .nav-primary .genesis-nav-menu a {
