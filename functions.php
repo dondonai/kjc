@@ -62,6 +62,7 @@ function dd_custom_comment_form( $fields ) {
 unregister_sidebar( 'header-right' );
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
+// Add logos on header
 add_action( 'genesis_header', 'dd_header_left', 5 );
 add_action( 'genesis_header', 'dd_header_right' );
 
@@ -73,6 +74,48 @@ function dd_header_right() {
 	echo '<div class="header-right"><img src="'. get_bloginfo('stylesheet_directory') .'/images/coat-of-arms.png" alt="Coat of Arms" class="header-right"></div>';
 }
 
+// Register custom post types
+add_action( 'init', 'dd_kmusic_post_type' );
+function dd_kmusic_post_type() {
+
+	// Kingdom Music
+	register_post_type( 'kingdom-musics',
+		array(
+			'labels' => array(
+				'name' => __( 'Kingdom Musics' ),
+				'singular_name' => __( 'Kingdom Music' ),
+				'add_new_item' => "Add New KM",
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'kingdom-musics'),
+			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
+			'menu_icon' => 'dashicons-format-audio',
+			'menu_position' => 5,
+			'taxonomies' => array('category')
+		)
+	);
+
+	// Kingdom Videos
+	register_post_type( 'kingdom-videos',
+		array(
+			'labels' => array(
+				'name' => __( 'Kingdom Videos' ),
+				'singular_name' => __( 'Kingdom Video' ),
+				'add_new_item' => "Add New KV",
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'kingdom-videos'),
+			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
+			'menu_icon' => 'dashicons-video-alt2',
+			'menu_position' => 5,
+			'taxonomies' => array('category')
+		)
+	);
+}
+
+// Register widgets
 genesis_register_sidebar( array(
 	'id' => 'home-slider',
 	'name' => 'Home Slider',
