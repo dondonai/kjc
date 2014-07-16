@@ -11,8 +11,8 @@ define( 'CHILD_THEME_VERSION', '2.1.0' );
 add_action( 'wp_enqueue_scripts', 'dd_google_fonts' );
 function dd_google_fonts() {
 
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION );
+	// wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
@@ -75,7 +75,7 @@ function dd_header_right() {
 }
 
 // Register custom post types
-add_action( 'init', 'dd_kmusic_post_type' );
+/*add_action( 'init', 'dd_kmusic_post_type' );
 function dd_kmusic_post_type() {
 
 	// Kingdom Music
@@ -92,7 +92,8 @@ function dd_kmusic_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-format-audio',
 			'menu_position' => 5,
-			'taxonomies' => array('category')
+			'taxonomies' => array('category', 'post_tag', 'singer'),
+			'hierarchical' => true
 		)
 	);
 
@@ -110,10 +111,11 @@ function dd_kmusic_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
-			'taxonomies' => array('category')
+			'taxonomies' => array('category', 'post_tag'),
+			'hierarchical' => true
 		)
 	);
-}
+}*/
 
 // Register widgets
 genesis_register_sidebar( array(
@@ -133,3 +135,20 @@ genesis_register_sidebar( array(
 	'name' => 'Call to Action',
 	'description' => 'Call to action widget'
 ) );
+
+add_action('init', 'remove_editor_init');
+function remove_editor_init() {
+    // if post not set, just return 
+    // fix when post not set, throws PHP's undefined index warning
+    if (isset($_GET['post'])) {
+        $post_id = $_GET['post'];
+    } else if (isset($_POST['post_ID'])) {
+        $post_id = $_POST['post_ID'];
+    } else {
+        return;
+    }
+    $template_file = get_post_meta($post_id, '_wp_page_template', TRUE);
+    if ($template_file == 'singers.php') {
+        remove_post_type_support('page', 'editor');
+    }
+}
