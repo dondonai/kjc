@@ -1407,7 +1407,7 @@ div#genesis-responsive-slider {
 }
 
 .home-sections .entry .entry-title {
-    /* height: 120px; */
+    height: 120px;
     margin-bottom: 0;
     position: relative;
 }
