@@ -362,7 +362,7 @@ input:hover[type="submit"],
 .button:hover {
 	background-color: #0b3a84;
 	color: #fff;
-		
+
 	-webkit-box-shadow: 0 4px 0 0 #041835 inset;
 	box-shadow: 0 4px 0 0 #041835 inset;
 }
@@ -877,7 +877,7 @@ img.alignright,
 .header-image .site-title > a {
 /* 	background: url(images/header.png) no-repeat center; */
 	/* float: left; */
-	
+
 min-height: 154px;
 	width: 100%;
 	position: absolute;
@@ -1554,7 +1554,7 @@ div#genesis-responsive-slider {
 	-ms-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
-	
+
 }
 .kingdom-musics .entry:hover img {
 	-webkit-box-shadow: 0 0 10px 0 #333;
@@ -1732,7 +1732,7 @@ div#genesis-responsive-slider {
 	.header-full-width .title-area {
 		background-size: 150px;
 	}
-	img.header-left, 
+	img.header-left, 
 	img.header-right {
 		width: 50px;
 	}

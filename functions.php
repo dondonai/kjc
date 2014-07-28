@@ -137,6 +137,22 @@ function dd_kmusic_post_type() {
 		) 
 	);
 
+	// Video taxonomy
+	register_taxonomy( 'programs',array (
+					  0 => 'kingdom-videos',
+					),
+		array( 'hierarchical' => true,
+			'label' => 'Programs',
+			'show_ui' => true,
+			'query_var' => true,
+			'show_admin_column' => true,
+			'labels' => array (
+			  'search_items' => 'Program',
+			  'add_new_item' => 'Add New Program'
+			)
+		) 
+	);
+
 }
 
 // Custom taxonomy
@@ -181,7 +197,7 @@ function remove_editor_init() {
 
 add_action( 'genesis_after_sidebar_widget_area', 'kjc_ads');
 function kjc_ads()  {
-	if( is_tax( 'singers' ) ){
+	if( is_tax( 'singers' ) || is_tax( 'programs' ) ){
 		echo "Check";
 	}
 }
