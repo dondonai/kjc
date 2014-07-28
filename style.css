@@ -1394,26 +1394,26 @@ div#genesis-responsive-slider {
     background: url(images/kuc.jpg) no-repeat;
 }
 .home-sections .more-from-category {
-	margin: -150px 0 0;
-	overflow: hidden;
 	position: relative;
-	min-height: 150px;
-	top: 150px;
 	-webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-ms-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
+	margin-bottom: 0;
+	height: 150px;
+	margin-top: -150px;
 }
 
 .home-sections .entry .entry-title {
-    height: 120px;
-    margin-bottom: 0;
-    position: relative;
+    height: 150px;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    display: block;
 }
-
-.home-sections section:hover .more-from-category {
-	top:75px;
+.home-sections .entry-header {
+    position: relative;
 }
 .home-sections .more-from-category a,
 .home-sections .entry-title a {
@@ -1424,21 +1424,18 @@ div#genesis-responsive-slider {
     padding: 16px 0;
     background: rgba( 18, 107, 203, 0.5);
 	display: block;
-	position: relative;
-}
-.home-sections .entry-title a {
     position: absolute;
-    top: 75px;
-    margin-top: 75px;
-    padding: 22px 0;
+    height: 75px;
     width: 100%;
 }
-.home-sections .entry-title:hover a {
-	margin-top: 0;
+.more-from-category a,
+.entry-title a {
+    top: 225px;
 }
-/* .home-sections .more-from-category:hover a {
-	top: 0px;
-} */
+.more-from-category:hover a,
+.entry-title:hover > a {
+    top: 75px;
+}
 .home-sections button.btn {
 	width: 100%;
 	position: relative;
