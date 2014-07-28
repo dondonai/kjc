@@ -1382,12 +1382,10 @@ div#genesis-responsive-slider {
 .home .category-manna {
     background: url(images/manna.jpg) no-repeat;
 }
-.home .category-kingdom-music,
-#featured-page-2 .entry,
-.home .type-kingdom_musics {
+#featured-page-2 .entry {
     background: url(images/km.jpg) no-repeat;
 }
-.home .category-videos {
+#featured-page-3 .entry {
     background: url(images/videos.jpg) no-repeat;
 }
 .home .category-news-updates {
@@ -1534,9 +1532,10 @@ div#genesis-responsive-slider {
     text-shadow: 0 3px 1px #333;
 }
 
-/* Kingdom Musics */
+/* Kingdom Musics & Kingdom Videos */
 
-.kingdom-musics .entry {
+.kingdom-musics .entry,
+.kingdom-videos .entry {
     display: inline-block;
 	padding: 20px 37px;
 }
@@ -1544,11 +1543,13 @@ div#genesis-responsive-slider {
     float: right;
     padding-right: 30px;
 } */
-.kingdom-musics .entry-title {
+.kingdom-musics .entry-title,
+.kingdom-videos .entry-title {
 	font-size: 30px;
     text-align: center;
 }
-.kingdom-musics .entry img {
+.kingdom-musics .entry img,
+.kingdom-videos .entry img {
 	-webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-ms-transition: all .2s ease-in-out;
@@ -1556,7 +1557,8 @@ div#genesis-responsive-slider {
 	transition: all .2s ease-in-out;
 
 }
-.kingdom-musics .entry:hover img {
+.kingdom-musics .entry:hover img,
+.kingdom-videos .entry:hover img {
 	-webkit-box-shadow: 0 0 10px 0 #333;
 	box-shadow: 0 0 10px 0 #333;
 	position: relative;
