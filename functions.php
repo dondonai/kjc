@@ -12,8 +12,12 @@ add_action( 'wp_enqueue_scripts', 'dd_google_fonts' );
 function dd_google_fonts() {
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION );
+<<<<<<< HEAD
 	// wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+=======
+	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 
 	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
@@ -76,7 +80,11 @@ function dd_header_right() {
 }
 
 // Register custom post types
+<<<<<<< HEAD
 add_action( 'init', 'dd_kmusic_post_type' );
+=======
+/*add_action( 'init', 'dd_kmusic_post_type' );
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 function dd_kmusic_post_type() {
 
 	// Kingdom Music
@@ -86,7 +94,10 @@ function dd_kmusic_post_type() {
 				'name' => __( 'Kingdom Musics' ),
 				'singular_name' => __( 'Kingdom Music' ),
 				'add_new_item' => "Add New KM",
+<<<<<<< HEAD
 				'add_new' => "Add New KM"
+=======
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -94,7 +105,11 @@ function dd_kmusic_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-format-audio',
 			'menu_position' => 5,
+<<<<<<< HEAD
 			'taxonomies' => array('singer'),
+=======
+			'taxonomies' => array('category', 'post_tag', 'singer'),
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 			'hierarchical' => true
 		)
 	);
@@ -106,7 +121,10 @@ function dd_kmusic_post_type() {
 				'name' => __( 'Kingdom Videos' ),
 				'singular_name' => __( 'Kingdom Video' ),
 				'add_new_item' => "Add New KV",
+<<<<<<< HEAD
 				'add_new' => "Add New KV"
+=======
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -114,6 +132,7 @@ function dd_kmusic_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
+<<<<<<< HEAD
 			// 'taxonomies' => array('category', 'post_tag'),
 			'hierarchical' => true
 		)
@@ -142,6 +161,13 @@ function dd_kmusic_post_type() {
 // Custom taxonomy
 add_action('init', 'cptui_register_my_taxes_singers');
 function cptui_register_my_taxes_singers() {}
+=======
+			'taxonomies' => array('category', 'post_tag'),
+			'hierarchical' => true
+		)
+	);
+}*/
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 
 // Register widgets
 genesis_register_sidebar( array(
@@ -178,6 +204,7 @@ function remove_editor_init() {
         remove_post_type_support('page', 'editor');
     }
 }
+<<<<<<< HEAD
 
 add_action( 'genesis_after_sidebar_widget_area', 'kjc_ads');
 function kjc_ads()  {
@@ -185,3 +212,5 @@ function kjc_ads()  {
 		echo "Check";
 	}
 }
+=======
+>>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
