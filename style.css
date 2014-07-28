@@ -76,7 +76,6 @@ input[type="search"] {
 /* ## Typographical Elements
 --------------------------------------------- */
 
-<<<<<<< HEAD
 /* FontAwesome */
 @font-type {
 
@@ -85,8 +84,6 @@ input[type="search"] {
 
 }
 
-=======
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 body {
 	background: url(images/bg.jpg) no-repeat left top;
 /* 	background-color: #fff; */
@@ -1540,7 +1537,6 @@ div#genesis-responsive-slider {
     text-shadow: 0 3px 1px #333;
 }
 
-<<<<<<< HEAD
 /* Kingdom Musics */
 
 .kingdom-musics .entry {
@@ -1580,8 +1576,6 @@ div#genesis-responsive-slider {
     padding: 20px 30px;
     padding: 0 3rem;
 }
-=======
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1735,7 +1729,6 @@ div#genesis-responsive-slider {
 		padding: 40px;
 	}
 
-<<<<<<< HEAD
 }
 
 @media only and (max-width: 320px ) {
@@ -1759,6 +1752,4 @@ div#genesis-responsive-slider {
 		min-height: 60px;
 	}
 
-=======
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 }

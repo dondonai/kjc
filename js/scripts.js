@@ -10,11 +10,7 @@ $( '.live-tv, .fa-times-circle' ).on( 'click', function( e ) {
 		$offset = $('.streaming').offset().top;
 		$('html, body').animate({scrollTop: $('.streaming').offset().top }, 'slow');
 		
-<<<<<<< HEAD
 		// console.log( $offset );
-=======
-		console.log( $offset );
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 		// alert( $stream_height );
 		if( $stream_height > 1 ) {
 			$('.streaming iframe').attr( 'src', '');
@@ -27,23 +23,12 @@ $( '.live-tv, .fa-times-circle' ).on( 'click', function( e ) {
 // Sticky menu
 $( window ).scroll( function () {
 	
-<<<<<<< HEAD
 	var $nav_primary = $('.nav-primary'),
 	$sticky = $('.menu-primary'),
 	$nav_offset = $nav_primary.offset().top + $nav_primary.height(),
 	$win_middle = $('.site-inner').height() / 2,
 	$win_scrolltop = $( window ).scrollTop();
 
-=======
-	$nav_primary = $('.nav-primary');
-	$sticky = $('.menu-primary');
-	$nav_offset = $nav_primary.offset().top + $nav_primary.height();
-	$win_middle = $('.site-inner').height() / 2;
-	$win_scrolltop = $( window ).scrollTop();
-
-	console.log( $win_middle );
-
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 	if( $win_scrolltop >= $nav_offset ) {
 		$sticky.addClass('sticky');
 		// $backtotop.fadeIn( 'slow' );
@@ -66,7 +51,6 @@ $backtotop.on( 'click', function() {
 	$('html, body').animate({scrollTop: 0 }, 'slow');
 });
 
-<<<<<<< HEAD
 // Remove current singer
 var singer = $('.singer.entry-title').text();
 
@@ -77,6 +61,4 @@ $('.related-singer a').each(function() {
 });
 
 
-=======
->>>>>>> ebb55318b96daecdfbe9574b620f112c1b50511d
 });
