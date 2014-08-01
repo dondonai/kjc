@@ -86,7 +86,7 @@ function dd_kmusic_post_type() {
 				'name' => __( 'Musics' ),
 				'singular_name' => __( 'Music' ),
 				'add_new_item' => "Add New Music",
-				'add_new' => "Add New Music"
+				'add_new' => "Add Music"
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -106,7 +106,7 @@ function dd_kmusic_post_type() {
 				'name' => __( 'Videos' ),
 				'singular_name' => __( 'Video' ),
 				'add_new_item' => "Add New Video",
-				'add_new' => "Add New Video"
+				'add_new' => "Add Video"
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -118,6 +118,26 @@ function dd_kmusic_post_type() {
 			'hierarchical' => true
 		)
 	);
+
+	// Kingdom Upclose
+	// register_post_type( 'kingdom-upclose',
+	// 	array(
+	// 		'labels' => array(
+	// 			'name' => __( 'Upclose' ),
+	// 			'singular_name' => __( 'Upclose' ),
+	// 			'add_new_item' => "Add New Upclose",
+	// 			'add_new' => "Add New Upclose"
+	// 		),
+	// 		'public' => true,
+	// 		'has_archive' => true,
+	// 		'rewrite' => array('slug' => 'kingdom-videos'),
+	// 		'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
+	// 		'menu_icon' => 'dashicons-video-alt2',
+	// 		'menu_position' => 5,
+	// 		// 'taxonomies' => array('category', 'post_tag'),
+	// 		'hierarchical' => true
+	// 	)
+	// );
 
 	// Add new taxonomy
 

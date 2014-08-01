@@ -68,5 +68,7 @@ $('.related-singer a').each(function() {
      }
 });
 
+$('#featured-page-4 a').attr('href', '/kjc/programs/kingdom-upclose/');
+
 
 });
