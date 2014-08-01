@@ -83,10 +83,10 @@ function dd_kmusic_post_type() {
 	register_post_type( 'kingdom-musics',
 		array(
 			'labels' => array(
-				'name' => __( 'Kingdom Musics' ),
-				'singular_name' => __( 'Kingdom Music' ),
-				'add_new_item' => "Add New KM",
-				'add_new' => "Add New KM"
+				'name' => __( 'Musics' ),
+				'singular_name' => __( 'Music' ),
+				'add_new_item' => "Add New Music",
+				'add_new' => "Add New Music"
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -103,10 +103,10 @@ function dd_kmusic_post_type() {
 	register_post_type( 'kingdom-videos',
 		array(
 			'labels' => array(
-				'name' => __( 'Kingdom Videos' ),
-				'singular_name' => __( 'Kingdom Video' ),
-				'add_new_item' => "Add New KV",
-				'add_new' => "Add New KV"
+				'name' => __( 'Videos' ),
+				'singular_name' => __( 'Video' ),
+				'add_new_item' => "Add New Video",
+				'add_new' => "Add New Video"
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -200,4 +200,9 @@ function kjc_ads()  {
 	if( is_tax( 'singers' ) || is_tax( 'programs' ) ){
 		echo "Check";
 	}
+}
+
+// add_action( 'genesis_after_header', 'check' );
+function check() {
+	echo 'check';
 }

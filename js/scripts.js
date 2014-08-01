@@ -1,5 +1,9 @@
 jQuery(document).ready( function( $ ) {
 
+$('.menu-primary > .menu-item:last-child').after('<div class="responsive-menu"><i class="fa fa-navicon"></i></div>');
+$('.responsive-menu').on('click', function() {
+	$('.menu-primary .menu-item a').slideToggle();
+});
 // Streaming
 $( '.live-tv, .fa-times-circle' ).on( 'click', function( e ) {
 
@@ -31,10 +35,14 @@ $( window ).scroll( function () {
 
 	if( $win_scrolltop >= $nav_offset ) {
 		$sticky.addClass('sticky');
-		// $backtotop.fadeIn( 'slow' );
+		$('.menu-primary .menu-item a').hide();
+		$('.genesis-nav-menu').css('line-height', '0');
+		$('.responsive-menu').show();
 	} else {
 		$sticky.removeClass('sticky');
-		// $backtotop.fadeOut();
+		$('.menu-primary .menu-item a').fadeIn();
+		$('.genesis-nav-menu').css('line-height', '1');
+		$('.responsive-menu').hide();
 	}
 
 	if( $win_scrolltop >= $win_middle ) {
