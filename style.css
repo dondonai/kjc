@@ -1024,13 +1024,6 @@ min-height: 154px;
 --------------------------------------------- */
 
 .nav-primary {
-<<<<<<< HEAD
-<<<<<<< HEAD
-	background-color: #2f3641;
-=======
-/* 	background-color: #2f3641; */
-=======
->>>>>>> manna
 	background: #767677; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
@@ -1039,11 +1032,6 @@ min-height: 154px;
 	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-<<<<<<< HEAD
->>>>>>> manna
-	/* box-shadow: 0 -4px 0 0 #000 inset; */
-=======
->>>>>>> manna
 	position: relative;
 	min-height: 80px;
 }
@@ -1599,16 +1587,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
     float: right;
     padding-right: 30px;
 } */
-.kingdom-musics .entry-title {
+.kingdom-musics .entry-title,
+.kingdom-videos .entry-title {
 	font-size: 30px;
 	text-align: center;
 }
-<<<<<<< HEAD
-=======
 .tax-programs .entry-title {
 	text-align: left;
 }
->>>>>>> manna
 .kingdom-videos .entry-title a {
 	font-size: 30px;
 	border-left: 5px solid #126bcb;
@@ -1637,10 +1623,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
     margin-left: 20px;
 }
 .singer.entry-title,
-<<<<<<< HEAD
-.program.entry-title {
-    padding: 0 30px;
-=======
 .program.entry-title,
 .manna.entry-title{
     padding: 0 30px;
@@ -1689,7 +1671,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 }
 .manna-list .entry-content p {
     margin-bottom: 40px;
->>>>>>> manna
 }
 
 /* # Media Queries
@@ -1740,11 +1721,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 		min-height: 76px;
 	}
 	.home-slider {
-<<<<<<< HEAD
-		width: 460px;
-=======
 		width: 49%;
->>>>>>> manna
 	}
 	.home-sections,
 	.home-sections section,
