@@ -1024,7 +1024,15 @@ min-height: 154px;
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #2f3641;
+/* 	background-color: #2f3641; */
+	background: #767677; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	/* box-shadow: 0 -4px 0 0 #000 inset; */
 	position: relative;
 	min-height: 80px;
@@ -1311,7 +1319,15 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #2f3641;
+/* 	background-color: #2f3641; */
+	background: #767677; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	color: #fff;
 	font-size: 16px;
 	line-height: 1;
@@ -1365,7 +1381,16 @@ div#genesis-responsive-slider {
     padding: 30px 15px;
 }
 .streaming {
-	background: #126bcb;
+/* 	background: #126bcb; */
+	background: #7db9e8; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #7db9e8 0%, #2586c6 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7db9e8), color-stop(100%,#2586c6)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #7db9e8 0%,#2586c6 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#2586c6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 	display: none;
 }
 .home .site-inner {
@@ -1584,7 +1609,6 @@ div#genesis-responsive-slider {
 	-ms-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
-
 }
 .kingdom-musics .entry:hover img,
 .kingdom-videos .entry:hover img {
@@ -1601,8 +1625,54 @@ div#genesis-responsive-slider {
     margin-left: 20px;
 }
 .singer.entry-title,
-.program.entry-title {
+.program.entry-title,
+.manna.entry-title{
     padding: 0 30px;
+}
+
+/* Manna */
+.manna-list main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.manna-list .content {
+    -moz-column-count:3;
+    -moz-column-gap: 3%;
+    -moz-column-width: 30%;
+    -webkit-column-count:3;
+    -webkit-column-gap: 3%;
+    -webkit-column-width: 30%;
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
+}
+.manna-list .entry {
+    display: inline-block;
+    position: relative;
+    margin: 20px 10px;
+    min-height: 500px;
+	max-width: 345px;
+    border: 2px solid #eee;
+    padding: 20px;
+}
+.manna-list .more-link {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 20px;
+	margin-top: 10px;
+    width: 100%;
+    background: #5E94CE;
+    color: #fff;
+    left: 0;
+}
+.manna-list .more-link:hover {
+	background: #126bcb;
+}
+.manna-list .entry-content p {
+    margin-bottom: 40px;
 }
 
 /* # Media Queries
