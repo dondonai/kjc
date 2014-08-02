@@ -957,7 +957,7 @@ min-height: 154px;
 	border-top: none;
 	font-size: 14px;
 	line-height: 1.3;
-	padding: 20px;
+	padding: 15px 20px;
 	position: relative;
 	text-transform: capitalize;
 	text-shadow: 0 1px 0 #aaa;
@@ -1024,7 +1024,19 @@ min-height: 154px;
 --------------------------------------------- */
 
 .nav-primary {
+<<<<<<< HEAD
 	background-color: #2f3641;
+=======
+/* 	background-color: #2f3641; */
+	background: #767677; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+>>>>>>> manna
 	/* box-shadow: 0 -4px 0 0 #000 inset; */
 	position: relative;
 	min-height: 80px;
@@ -1037,6 +1049,10 @@ min-height: 154px;
 
 .nav-primary .genesis-nav-menu .sub-menu a {
 	color: #333;
+}
+
+.nav-primary .sub-menu a:hover {
+    background: #eee;
 }
 
 .nav-primary .genesis-nav-menu a:hover,
@@ -1307,7 +1323,15 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #2f3641;
+/* 	background-color: #2f3641; */
+	background: #767677; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	color: #fff;
 	font-size: 16px;
 	line-height: 1;
@@ -1361,7 +1385,16 @@ div#genesis-responsive-slider {
     padding: 30px 15px;
 }
 .streaming {
-	background: #126bcb;
+/* 	background: #126bcb; */
+	background: #7db9e8; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #7db9e8 0%, #2586c6 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7db9e8), color-stop(100%,#2586c6)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #7db9e8 0%,#2586c6 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #7db9e8 0%,#2586c6 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#2586c6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 	display: none;
 }
 .home .site-inner {
@@ -1564,6 +1597,12 @@ div#genesis-responsive-slider {
 	font-size: 30px;
 	text-align: center;
 }
+<<<<<<< HEAD
+=======
+.tax-programs .entry-title {
+	text-align: left;
+}
+>>>>>>> manna
 .kingdom-videos .entry-title a {
 	font-size: 30px;
 	border-left: 5px solid #126bcb;
@@ -1576,7 +1615,6 @@ div#genesis-responsive-slider {
 	-ms-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
-
 }
 .kingdom-musics .entry:hover img,
 .kingdom-videos .entry:hover img {
@@ -1593,17 +1631,67 @@ div#genesis-responsive-slider {
     margin-left: 20px;
 }
 .singer.entry-title,
+<<<<<<< HEAD
 .program.entry-title {
     padding: 0 30px;
+=======
+.program.entry-title,
+.manna.entry-title{
+    padding: 0 30px;
+}
+
+/* Manna */
+.manna-list main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.manna-list .content {
+    -moz-column-count:3;
+    -moz-column-gap: 3%;
+    -moz-column-width: 30%;
+    -webkit-column-count:3;
+    -webkit-column-gap: 3%;
+    -webkit-column-width: 30%;
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
+}
+.manna-list .entry {
+    display: inline-block;
+    position: relative;
+    margin: 20px 10px;
+    min-height: 500px;
+	max-width: 345px;
+    border: 2px solid #eee;
+    padding: 20px;
+}
+.manna-list .more-link {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 20px;
+	margin-top: 10px;
+    width: 100%;
+    background: #5E94CE;
+    color: #fff;
+    left: 0;
+}
+.manna-list .more-link:hover {
+	background: #126bcb;
+}
+.manna-list .entry-content p {
+    margin-bottom: 40px;
+>>>>>>> manna
 }
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
-
-	.site-inner,
-	.wrap {
+	
+	.sticky, .site-inner, .wrap {
 		max-width: 960px;
 	}
 
@@ -1646,13 +1734,22 @@ div#genesis-responsive-slider {
 		min-height: 76px;
 	}
 	.home-slider {
+<<<<<<< HEAD
 		width: 460px;
+=======
+		width: 49%;
+>>>>>>> manna
 	}
 	.home-sections,
 	.home-sections section,
 	.bitgravity,
 	.call-to-action {
 		width: 49%;
+	}
+	.kingdom-musics .entry,
+	.kingdom-videos .entry {
+		max-width: 33.33333333333333%;
+		float: left;
 	}
 }
 
@@ -1717,6 +1814,18 @@ div#genesis-responsive-slider {
 
 	.footer-widgets-1 {
 		margin-right: 0;
+	}
+	
+	.genesis-nav-menu a {
+		font-size: 14px;
+	}
+	.nav-primary {
+		min-height: 54px;
+	}
+	
+	.kingdom-musics .entry-title,
+	.kingdom-videos .entry-title {
+		font-size: 20px;
 	}
 
 }
