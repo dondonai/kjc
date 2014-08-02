@@ -1024,7 +1024,6 @@ min-height: 154px;
 --------------------------------------------- */
 
 .nav-primary {
-/* 	background-color: #2f3641; */
 	background: #767677; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #767677 0%, #2f3641 100%); /* FF3.6+ */
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#767677), color-stop(100%,#2f3641)); /* Chrome,Safari4+ */
@@ -1033,7 +1032,6 @@ min-height: 154px;
 	background: -ms-radial-gradient(center, ellipse cover,  #767677 0%,#2f3641 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #767677 0%,#2f3641 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#767677', endColorstr='#2f3641',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	/* box-shadow: 0 -4px 0 0 #000 inset; */
 	position: relative;
 	min-height: 80px;
 }
