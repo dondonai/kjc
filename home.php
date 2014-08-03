@@ -7,7 +7,7 @@ add_action( 'genesis_loop', 'dd_custom_loop' );
 
 function dd_custom_loop() {
 
-	echo '<div class="home-featured">';
+	echo '<div class="home-featured"><div class="wrap">';
 
 		// genesis_widget_area( 'home-slider', array(
 		// 	'before' => '<div class="home-slider widget-area">',
@@ -22,9 +22,9 @@ function dd_custom_loop() {
 			'after' => '</div>'
 		));
 
-	echo '</div>';
+	echo '</div></div>';
 
-	echo '<div class="streaming">';
+	echo '<div class="streaming"><div class="wrap">';
 	?>
 		<div class="bitgravity">
 			<i class="fa fa-times-circle" title="Close Streaming"></i>
@@ -42,7 +42,7 @@ function dd_custom_loop() {
 
 	echo '</div>'; // end of cta
 
-	echo '</div>'; // end of streaming
+	echo '</div></div>'; // end of streaming
 
 }
 

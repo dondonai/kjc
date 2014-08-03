@@ -29,7 +29,7 @@ $( window ).scroll( function () {
 	
 	var $nav_primary = $('.nav-primary'),
 	$sticky = $('.menu-primary'),
-	$nav_offset = $nav_primary.offset().top + $nav_primary.height(),
+	$nav_offset = $nav_primary.offset().top + $nav_primary.height().
 	$win_middle = $('.site-inner').height() / 2,
 	$win_scrolltop = $( window ).scrollTop();
 

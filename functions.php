@@ -31,17 +31,20 @@ add_theme_support( 'custom-background' );
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-//* Unregister sidebar/content layout setting
+// Remove layouts
 genesis_unregister_layout( 'sidebar-content' );
- 
-//* Unregister content/sidebar/sidebar layout setting
 genesis_unregister_layout( 'content-sidebar-sidebar' );
- 
-//* Unregister sidebar/sidebar/content layout setting
 genesis_unregister_layout( 'sidebar-sidebar-content' );
- 
-//* Unregister sidebar/content/sidebar layout setting
 genesis_unregister_layout( 'sidebar-content-sidebar' );
+
+add_theme_support( 'genesis-structural-wraps', array(
+	'header',
+	// 'nav',
+	// 'sub-nav',
+	// 'site-inner',
+	'footer-widgets',
+	'footer',
+));
 
 add_filter('widget_text', 'do_shortcode');
 
