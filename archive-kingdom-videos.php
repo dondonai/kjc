@@ -23,7 +23,7 @@ add_action( 'genesis_loop', 'kjc_kingdom_videos' );
 function kjc_kingdom_videos() {
 $custom_terms = get_terms('programs');
 foreach($custom_terms as $custom_term) {
-	    
+	    	
 	    wp_reset_query();
 
 	    $term_link = get_term_link( $custom_term );

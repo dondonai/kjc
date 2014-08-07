@@ -943,7 +943,7 @@ min-height: 154px;
 	padding: 30px 24px;
 	font-size: 20px;
 	text-transform: uppercase;
-	text-shadow: 0 1px 1px #000;
+	/* text-shadow: 0 1px 1px #000; */
 }
 
 .genesis-nav-menu a:hover,
@@ -962,8 +962,13 @@ min-height: 154px;
 	-ms-transition:     opacity .4s ease-in-out;
 	-o-transition:      opacity .4s ease-in-out;
 	transition:         opacity .4s ease-in-out;
-	width: 200px;
+	width: 230px;
 	z-index: 99;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#000000)";/*IE 8*/
+	-moz-box-shadow: 0 0 5px #000000;/*FF 3.5+*/
+	-webkit-box-shadow: 0 0 5px #000000;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+	box-shadow: 0 0 5px #000000;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#000000); /*IE 5.5-7*/
 }
 
 .genesis-nav-menu .sub-menu a {
@@ -975,12 +980,12 @@ min-height: 154px;
 	padding: 15px 20px;
 	position: relative;
 	text-transform: capitalize;
-	text-shadow: 0 1px 0 #aaa;
+	/* text-shadow: 0 0px 0 #aaa; */
 	width: 230px;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
-	margin: -55px 0 0 199px;
+	margin: -50px 0 0 230px;
 }
 
 .genesis-nav-menu .menu-item:hover {
@@ -1020,6 +1025,22 @@ min-height: 154px;
 	padding: 10px 0 0;
 }
 
+/* Custom CSS */
+.nav-primary .genesis-nav-menu a:hover {
+    text-shadow: 0 1px 1px #000;
+}
+.nav-primary .genesis-nav-menu .sub-menu a:hover {
+    color: #333;
+    text-shadow: -1px 1px 0 #fff;
+}
+.sub-menu .menu-item-has-children > a:after {
+    content: "\f0da";
+    font-family: fontawesome;
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+}
+
 /* ## Site Header Navigation
 --------------------------------------------- */
 
@@ -1057,17 +1078,19 @@ min-height: 154px;
 }
 
 .nav-primary .genesis-nav-menu .sub-menu a {
-	color: #333;
+	color: #aaa;
 }
 
 .nav-primary .sub-menu a:hover {
-    background: #eee;
+    background: #ccc;
 }
 
 .nav-primary .genesis-nav-menu a:hover,
 .nav-primary .genesis-nav-menu .current-menu-item > a,
 .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #126bcb;
+/* color: #126bcb; */
+	
+/* color: #ccc; */
 }
 
 /* ## Secondary Navigation
@@ -1675,11 +1698,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
     top: 0;
 }
 .manna-list .entry:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#333333)";/*IE 8*/
-    -moz-box-shadow: 0 0 5px 2px #333333;/*FF 3.5+*/
-    -webkit-box-shadow: 0 0 5px 2px #333333;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-    box-shadow: 0 0 5px 2px #333333;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#333333); /*IE 5.5-7*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#cccccc)";/*IE 8*/
+    -moz-box-shadow: 0 0 5px 2px #cccccc;/*FF 3.5+*/
+    -webkit-box-shadow: 0 0 5px 2px #cccccc;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 0 5px 2px #cccccc;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#cccccc); /*IE 5.5-7*/
 }
 .manna-list .entry:nth-child(odd) {
     background: #ddd;

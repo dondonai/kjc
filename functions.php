@@ -229,3 +229,6 @@ function kjc_ads()  {
 function check() {
 	echo 'check';
 }
+
+// update_option('siteurl','http://localhost/kjc');
+// update_option('home','http://localhost/kjc');
