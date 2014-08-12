@@ -15,6 +15,7 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 // add_action( 'genesis_entry_header', 'kjc_post_title' );
 // add_action( 'genesis_after_loop', 'kjc_related_posts' );
 add_action( 'genesis_before_content', 'kjc_program' );
+add_action( 'genesis_entry_header', 'kjc_thumbnail', 5 );
 
 function kjc_program() {
 $terms = get_the_terms( $post->ID , 'programs' );
@@ -22,7 +23,7 @@ $terms = get_the_terms( $post->ID , 'programs' );
 	if ( $terms != null ){
 			foreach( $terms as $term ) {
 			// Print the name method from $term which is an OBJECT
-			echo '<h2 class="program entry-title">' . $term->name .'</h2>' ;
+			echo '<h2 class="program entry-title" itemprop="headline">' . $term->name .'</h2>' ;
 			// Get rid of the other data stored in the object, since it's not needed
 			unset($term);
 		} 
@@ -32,6 +33,10 @@ $terms = get_the_terms( $post->ID , 'programs' );
 function kjc_post_title() {
 	echo '<h2 class="entry-title" itemprop="headline">' . get_the_title() . '</h2>';
 	the_content();
+}
+
+function kjc_thumbnail() {
+	echo genesis_get_image();
 }
 
 genesis();

@@ -230,5 +230,44 @@ function check() {
 	echo 'check';
 }
 
-// update_option('siteurl','http://localhost/kjc');
-// update_option('home','http://localhost/kjc');
+// add_action( 'genesis_entry_header', 'kjc_lang' );
+// function kjc_lang() {
+// 	if( is_single() ) {
+// 		echo do_shortcode( '[lang russian="true" malay="true"]' );
+// 	}
+// }
+
+// Add Shortcode
+function lang_shortcode( $atts ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'russian' => '',
+			'malay' => '',
+			'chinese' => '',
+		), $atts )
+	);
+
+	// Code
+	// return "no translation available";
+	$link = get_the_permalink();
+
+	$return_string = '<div class="languages">Available languages: ';
+
+	if( $russian == "true" ) {
+		$return_string .= '<a href="' . rtrim( $link, '/') .'-russian">Russian Version</a>';	
+	}
+	if( $malay == "true" ) {
+		$return_string .= '<a href="' . rtrim( $link, '/') .'-malay">Malay Version</a>';	
+	}
+	if( $chinese == "true" ) {
+		$return_string .= '<a href="' . rtrim( $link, '/') .'-chinese">Malay Version</a>';	
+	}
+
+	$return_string .= '</div>';
+
+	return $return_string;
+}
+
+add_shortcode( 'lang', 'lang_shortcode' );

@@ -1677,22 +1677,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 }
 
 .manna-list .content {
-/*     -moz-column-count:4; */
-/*     -moz-column-gap: 4%; */
-/*     -moz-column-width: 40%; */
-/*     -webkit-column-count: 3; */
-/*     -webkit-column-gap: 4%; */
-/*     -webkit-column-width: 40%; */
-/*     column-count: 4; */
-/*     column-gap: 4%; */
-/*     column-width: 40%; */
+	-moz-column-count:3;
+    -moz-column-gap: 3%;
+    -moz-column-width: 30%;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 3%;
+    -webkit-column-width: 30%;
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
 }
 .manna-list .entry {
     display: inline-table;
     position: relative;
     margin: 20px 10px;
     /* min-height: 300px; */
-	max-width: 31%;
+/* 	max-width: 31%; */
     border: 2px solid #eee;
     padding: 20px;
     top: 0;
@@ -1739,6 +1739,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 	content: "\f086";
 	font-family: FontAwesome;
 	margin: 0 5px;
+}
+
+/* remove this later */
+.manna-list .attachment-full {
+    width: 100%;
 }
 
 /* # Media Queries

@@ -50,12 +50,15 @@ foreach($custom_terms as $custom_term) {
 			</article>
 
 	     	<?php
-		        // echo '<a href="'. esc_url( $term_link ) .'"><h1 class="entry-title">'.$custom_term->name.'</h1></a>';
-	        // echo '</article>';
 	     }
 	}
 }
 
+add_action( 'genesis_entry_header', 'kjc_author', 1 );
+function kjc_author() {
+	echo do_shortcode( '[post_comments zero="0" one="1" more="%"]' );
+	echo genesis_get_image();
+}
 
 
 genesis();
