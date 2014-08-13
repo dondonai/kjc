@@ -1746,6 +1746,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
     width: 100%;
 }
 
+/* Languages */
+.lang-list .lang-version {
+    display: inline;
+    margin: 0 5px;
+}
+.lang-list:before {
+    content: "Languages Available: ";
+	font-size: 13px;
+	position: relative;
+	bottom: 3px;
+}
+.entry-content .lang-list {
+    margin: 0 0 20px;
+}
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 

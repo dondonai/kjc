@@ -16,6 +16,8 @@ function dd_google_fonts() {
 	wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
 }
 
@@ -218,56 +220,61 @@ function remove_editor_init() {
     }
 }
 
-add_action( 'genesis_after_sidebar_widget_area', 'kjc_ads');
-function kjc_ads()  {
-	if( is_tax( 'singers' ) || is_tax( 'programs' ) ){
-		echo "Check";
-	}
-}
-
-// add_action( 'genesis_after_header', 'check' );
-function check() {
-	echo 'check';
-}
-
 // add_action( 'genesis_entry_header', 'kjc_lang' );
-// function kjc_lang() {
-// 	if( is_single() ) {
-// 		echo do_shortcode( '[lang russian="true" malay="true"]' );
-// 	}
-// }
-
-// Add Shortcode
-function lang_shortcode( $atts ) {
-
-	// Attributes
-	extract( shortcode_atts(
-		array(
-			'russian' => '',
-			'malay' => '',
-			'chinese' => '',
-		), $atts )
-	);
-
-	// Code
-	// return "no translation available";
+function kjc_lang() {
+	// echo do_shortcode( '[lang us="true" ukraine="true" japanese="true" chinese="true"]' );
 	$link = get_the_permalink();
+	$trimmed = rtrim( $link, '/' );
+	$stylesheet = get_bloginfo( 'stylesheet_directory' );
 
-	$return_string = '<div class="languages">Available languages: ';
+	// substr_replace($link, '', -1);
+	// substchar
 
-	if( $russian == "true" ) {
-		$return_string .= '<a href="' . rtrim( $link, '/') .'-russian">Russian Version</a>';	
-	}
-	if( $malay == "true" ) {
-		$return_string .= '<a href="' . rtrim( $link, '/') .'-malay">Malay Version</a>';	
-	}
-	if( $chinese == "true" ) {
-		$return_string .= '<a href="' . rtrim( $link, '/') .'-chinese">Malay Version</a>';	
-	}
+	?>
+		<div class="languages">
+			<ul class="lang-list">
+				<li class="lang-version"><a href="<?php echo mb_substitute_character( $link, ' ', -1 ); ?>" title="English"><img src="<?php echo $stylesheet; ?>/images/usa.png" alt="usa"></a></li>
+				<li class="lang-version"><a href="<?php echo $trimmed . '-ukraine/'; ?>" title="Ukraine"><img src="<?php echo $stylesheet; ?>/images/ukraine.png" alt="usa"></a></li>
+				<li class="lang-version"><a href="<?php echo $trimmed . '-japanese/'; ?>" title="Japanese"><img src="<?php echo $stylesheet; ?>/images/japan.png" alt="usa"></a></li>
+				<li class="lang-version"><a href="<?php echo $trimmed . '-chinese/'; ?>" title="Chinese"><img src="<?php echo $stylesheet; ?>/images/china.png" alt="usa"></a></li>
+				<li class="lang-version"><a href="<?php echo $trimmed . '-french/'; ?>" title="French"><img src="<?php echo $stylesheet; ?>/images/france.png" alt="usa"></a></li>
+			</ul>
+		</div>
 
-	$return_string .= '</div>';
-
-	return $return_string;
+	<?php
 }
 
-add_shortcode( 'lang', 'lang_shortcode' );
+// add_action( 'genesis_entry_header', 'kjc_languages' );
+function kjc_languages() {
+	echo do_shortcode( '[lang chinese french japanese="//devsites/kjc/trial-by-fire-japanese/" ukraine="//devsites/kjc/trial-by-fire-ukraine/" english="//devsites/kjc/trial-by-fire/"]' );
+}
+
+function lang_shortcode($atts){
+
+	$stylesheet = get_bloginfo( 'stylesheet_directory' );
+	extract(shortcode_atts(array(
+	  'chinese' => '#',
+	  'french' => '#',
+	  'japanese' => '#',
+	  'ukraine' => '#',
+	  'english' => '#'
+	), $atts));
+
+   $return_string = '<ul class="lang-list">';
+   
+   if( strlen($chinese) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $chinese .'"><img src="'. $stylesheet .'/images/china.png" alt=""></a></li>';   	
+
+   if( strlen($french) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $french .'"><img src="'. $stylesheet .'/images/france.png" alt=""></a></li>';
+
+   if( strlen($japanese) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $japanese .'"><img src="'. $stylesheet .'/images/japan.png" alt=""></a></li>';
+   
+   if( strlen($ukraine) > 2) $return_string .= '<li class="lang-version"><a href="'. $ukraine .'"><img src="'. $stylesheet .'/images/ukraine.png" alt=""></a></li>';
+   
+   if( strlen($english) > 2) $return_string .= '<li class="lang-version"><a href="'. $english .'"><img src="'. $stylesheet .'/images/usa.png" alt=""></a></li>';
+
+   $return_string .= '</ul>';
+
+   return $return_string;
+}
+
+add_shortcode('lang', 'lang_shortcode');

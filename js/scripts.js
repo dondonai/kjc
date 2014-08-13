@@ -52,23 +52,23 @@ $( window ).scroll( function () {
 	}
 });
 
-// Back to top
-$('.site-inner').after('<i class="fa fa-chevron-circle-up fa-2x"></i>');
-$backtotop = $('.fa-chevron-circle-up');
-$backtotop.on( 'click', function() {
-	$('html, body').animate({scrollTop: 0 }, 'slow');
-});
+	// Back to top
+	$('.site-inner').after('<i class="fa fa-chevron-circle-up fa-2x"></i>');
+	$backtotop = $('.fa-chevron-circle-up');
+	$backtotop.on( 'click', function() {
+		$('html, body').animate({scrollTop: 0 }, 'slow');
+	});
 
-// Remove current singer
-var singer = $('.singer.entry-title').text();
+	// Remove current singer
+	var singer = $('.singer.entry-title').text();
 
-$('.related-singer a').each(function() {
-     if ($(this).text() == singer) {
-         $(this).parent().remove();
-     }
-});
+	$('.related-singer a').each(function() {
+		if ($(this).text() == singer) {
+			$(this).parent().remove();
+		}
+	});
 
-$('#featured-page-4 a').attr('href', '/kjc/programs/kingdom-upclose/');
-
+	// Url fix for kingdom upclose
+	$('#featured-page-4 a').attr('href', '/kjc/programs/kingdom-upclose/');
 
 });
