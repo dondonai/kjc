@@ -69,7 +69,7 @@ unregister_sidebar( 'header-right' );
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
 // Add logos on header
-add_action( 'genesis_header', 'dd_header_left', 5 );
+// add_action( 'genesis_header', 'dd_header_left', 5 );
 add_action( 'genesis_header', 'dd_header_right' );
 
 function dd_header_left() {
