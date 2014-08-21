@@ -1457,11 +1457,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 
 /* Home Sections */
 .home-sections {
-    width: 500px;
+    width: 360px;
     float: right;
 }
 .home-sections section {
-    width: 230px;
+    width: 45%;
     text-align: center;
     margin-bottom: 15px;
     display: block;
@@ -1479,16 +1479,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 }
 /* use sprite here just to remind you */
 .home .category-manna {
-    background: url(images/manna.jpg) no-repeat;
+    background: url(images/manna.jpg) no-repeat center;
 }
 #featured-page-2 .entry {
-    background: url(images/km.jpg) no-repeat;
+    background: url(images/km.jpg) no-repeat center;
 }
 #featured-page-3 .entry {
-    background: url(images/videos.jpg) no-repeat;
+    background: url(images/videos.jpg) no-repeat center;
 }
 #featured-page-4 .entry {
-    background: url(images/kuc.jpg) no-repeat;
+    background: url(images/kuc.jpg) no-repeat center;
 }
 .home-sections .more-from-category {
 	position: relative;
@@ -1515,7 +1515,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 .home-sections .more-from-category a,
 .home-sections .entry-title a {
     color: #fff;
-    font-size: 27px;
+    font-size: 20px;
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
     padding: 16px 0;
@@ -1531,7 +1531,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', end
 }
 .more-from-category:hover a,
 .entry-title:hover > a {
-    top: 75px;
+    top: 90px;
 }
 .home-sections button.btn {
 	width: 100%;
