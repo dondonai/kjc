@@ -77,7 +77,7 @@ function dd_header_left() {
 }
 
 function dd_header_right() {
-	echo '<div class="header-right"><img src="'. get_bloginfo('stylesheet_directory') .'/images/coat-of-arms.png" alt="Coat of Arms" class="header-right"></div>';
+	echo '<div class="header-right"><img src="'. get_bloginfo('stylesheet_directory') .'/images/coat-of-arms-3d.png" alt="Coat of Arms" class="header-right"></div>';
 }
 
 // Register custom post types
