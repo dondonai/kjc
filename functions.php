@@ -12,12 +12,12 @@ add_action( 'wp_enqueue_scripts', 'dd_google_fonts' );
 function dd_google_fonts() {
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION );
-	// wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+	// wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
-	wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
-	wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
+	// wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
+	// wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
 }
 
@@ -32,6 +32,8 @@ add_theme_support( 'custom-background' );
 
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+add_image_size( 'download thumbnail', 100, 100, array( 'top', 'center' ) );
 
 // Remove layouts
 genesis_unregister_layout( 'sidebar-content' );
@@ -81,8 +83,8 @@ function dd_header_right() {
 }
 
 // Register custom post types
-add_action( 'init', 'dd_kmusic_post_type' );
-function dd_kmusic_post_type() {
+add_action( 'init', 'dd_post_type' );
+function dd_post_type() {
 
 	// Kingdom Music
 	register_post_type( 'kingdom-musics',
@@ -120,6 +122,26 @@ function dd_kmusic_post_type() {
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
 			// 'taxonomies' => array('category', 'post_tag'),
+			'hierarchical' => true
+		)
+	);
+
+	// Downloads
+	register_post_type( 'download',
+		array(
+			'labels' => array(
+				'name' => __( 'Download' ),
+				'singular_name' => __( 'Download' ),
+				'add_new_item' => "Add New",
+				'add_new' => "Add New"
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'download'),
+			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
+			'menu_icon' => 'dashicons-download',
+			'menu_position' => 5,
+			'taxonomies' => array('category'),
 			'hierarchical' => true
 		)
 	);
