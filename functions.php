@@ -52,7 +52,7 @@ add_filter('widget_text', 'do_shortcode');
 
 add_filter('genesis_footer_creds_text', 'dd_footer_creds_filter');
 function dd_footer_creds_filter( $creds ) {
-	$creds = '[footer_copyright first="2009"] &middot; The Kingdom of Jesus Christ The Name Above Every Name &middot; All rights reserved.';
+	$creds = '[footer_copyright] &middot; The Kingdom of Jesus Christ The Name Above Every Name &middot; All rights reserved.';
 	return $creds;
 }
 
