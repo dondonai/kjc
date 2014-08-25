@@ -1,5 +1,7 @@
 jQuery(document).ready( function( $ ) {
 
+$('.site-header').backstretch( templateDir + "/images/bg.jpg");
+
 $('.menu-primary > .menu-item:last-child').after('<div class="responsive-menu"><i class="fa fa-navicon"></i></div>');
 $('.responsive-menu').on('click', function() {
 	$('.menu-primary .menu-item a').slideToggle();

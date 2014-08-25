@@ -16,6 +16,7 @@ function dd_google_fonts() {
 	// wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'backstretch', '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js', array( 'jquery' ), CHILD_THEME_VERSION );
 	// wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
 	// wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
@@ -97,7 +98,7 @@ function dd_post_type() {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array('slug' => 'kingdom-musics'),
+			'rewrite' => array('slug' => 'kingdom-music'),
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-format-audio',
 			'menu_position' => 5,
@@ -117,7 +118,7 @@ function dd_post_type() {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array('slug' => 'kingdom-videos'),
+			'rewrite' => array('slug' => 'kingdom-video'),
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
@@ -300,3 +301,14 @@ function lang_shortcode($atts){
 }
 
 add_shortcode('lang', 'lang_shortcode');
+
+add_action( 'genesis_meta', 'dd_tempDir', 20 );
+function dd_tempDir() {
+	?>
+	
+	<script type="text/javascript">
+		var templateDir = "<?php bloginfo('stylesheet_directory') ?>";
+	</script>
+
+	<?php
+}
