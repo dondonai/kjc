@@ -1681,7 +1681,11 @@ more-from-category a {
 	box-shadow: 0 0 10px 0 #333;
 /* 	position: relative;
 	bottom: 10px; */
-	transform: translateY(-10px);
+	-moz-transform: scale(1.2) translateY(-10px);
+	-webkit-transform: scale(1.2) translateY(-10px);
+	-o-transform: scale(1.2) translateY(-10px);
+	-ms-transform: scale(1.2) translateY(-10px);
+	transform: scale(1.2) translateY(-10px);
 }
 .related-posts {
     padding: 40px;
