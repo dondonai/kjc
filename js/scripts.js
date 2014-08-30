@@ -7,7 +7,7 @@ $('.responsive-menu').on('click', function() {
 	$('.menu-primary .menu-item a').slideToggle();
 });
 // Streaming
-$( '.live-tv, .fa-times-circle' ).on( 'click', function( e ) {
+$( '.livetv a, .fa-times-circle' ).on( 'click', function( e ) {
 
 		e.preventDefault();
 
