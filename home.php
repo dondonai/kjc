@@ -13,14 +13,11 @@ function dd_custom_loop() {
 		// 	'before' => '<div class="home-slider widget-area">',
 		// 	'after' => '</div>'
 		// ));
-		echo '<div class="home-slider four-sixths first widget-area">';
+		echo '<div class="home-slider widget-area">';
 			echo do_shortcode( '[royalslider id="1"]' );
 		echo '</div>';
 
-		genesis_widget_area( 'home-sections', array(
-			'before' => '<div class="home-sections one-fourth widget-area">',
-			'after' => '</div>'
-		));
+		
 
 	echo '</div></div>';
 
@@ -43,6 +40,13 @@ function dd_custom_loop() {
 	echo '</div>'; // end of cta
 
 	echo '</div></div>'; // end of streaming
+
+	// echo '<div class="">';
+		genesis_widget_area( 'home-sections', array(
+			'before' => '<div class="wrap"><div class="home-sections widget-area">',
+			'after' => '</div></div>'
+		));
+	// echo '</div>';
 
 }
 
