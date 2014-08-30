@@ -55,7 +55,7 @@ add_filter('widget_text', 'do_shortcode');
 
 add_filter('genesis_footer_creds_text', 'dd_footer_creds_filter');
 function dd_footer_creds_filter( $creds ) {
-	$creds = '[footer_copyright] &middot; The Kingdom of Jesus Christ The Name Above Every Name &middot; All rights reserved.';
+	$creds = 'Copyright [footer_copyright] &middot; The Kingdom of Jesus Christ The Name Above Every Name &middot; All rights reserved.';
 	return $creds;
 }
 
@@ -102,8 +102,10 @@ function dd_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-format-audio',
 			'menu_position' => 5,
-			'taxonomies' => array('singer'),
-			'hierarchical' => true
+			// 'taxonomies' => array('singer'),
+			'hierarchical' => true,
+			'capability_type' => 'post',
+			'yarpp_support' => true
 		)
 	);
 
@@ -123,8 +125,11 @@ function dd_post_type() {
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
 			// 'taxonomies' => array('category', 'post_tag'),
-			'hierarchical' => true
+			'hierarchical' => true,
+			'capability_type' => 'post',
+			'yarpp_support' => true
 		)
+
 	);
 
 	// Downloads

@@ -62,15 +62,27 @@ $( window ).scroll( function () {
 	});
 
 	// Remove current singer
-	var singer = $('.singer.entry-title').text();
+	var singer	= $('.singer.entry-title').text();
 
-	$('.related-singer a').each(function() {
-		if ($(this).text() == singer) {
-			$(this).parent().remove();
-		}
+
+	$('.related-singer a, .entry-title a').each(function() {
+		if($(this).text() == singer) $(this).parent().remove();
 	});
 
 	// Url fix for kingdom upclose
 	$('#featured-page-4 a').attr('href', '/kjc/programs/kingdom-upclose/');
+
+	var type_of_giving = $('.givings select').val();
+
+	// $('.type-of-giving label').hide();
+
+	$(type_of_giving).on( 'change', function() {
+
+		$('.type-of-giving label').text( type_of_giving );
+	});
+
+	// setting iframe stardard size
+	
+	// $('.archive .entry:first-child').addClass('first');
 
 });

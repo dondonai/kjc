@@ -1458,6 +1458,7 @@ div#genesis-responsive-slider {
 .home .site-inner {
     padding-top: 0;
     max-width: 100%;
+    min-height: 80vh;
 }
 .home-slider {
 /*     max-width: 760px; */
@@ -1499,6 +1500,9 @@ div#genesis-responsive-slider {
 #featured-page-4 .entry {
     background: url(images/kuc.jpg) no-repeat center;
 }
+#featured-page-5 .entry {
+    background: url(images/covenant.jpg) no-repeat center;
+}
 .home-sections .more-from-category {
 	position: relative;
 	-webkit-transition: all .2s ease-in-out;
@@ -1511,7 +1515,7 @@ div#genesis-responsive-slider {
 	margin-top: -123px;
 }
 
-.home-sections .entry .entry-title {
+.home-sections .entry-title {
     height: 123px;
     position: absolute;
     margin: 0;
@@ -1547,8 +1551,17 @@ more-from-category a {
 }
 .home-sections button.btn {
 	width: 100%;
+	min-height: 123px;
 	position: relative;
 	padding: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.home-sections button.giving {
+	background: url(images/covenant.jpg) no-repeat left top;
+}
+.home-sections button.live-tv {
+	background: url(images/smni.jpg) no-repeat left top;
 }
 .home-sections .btn a {
     color: #fff;
@@ -1662,10 +1675,13 @@ more-from-category a {
 .tax-programs .entry-title {
 	text-align: left;
 }
+.kingdom-videos .entry-title{
+	line-height: 1;
+}
 .kingdom-videos .entry-title a {
-	font-size: 30px;
-	border-left: 5px solid #126bcb;
-	padding-left: 10px;
+	font-size: 22px;
+/* 	border-left: 5px solid #126bcb;
+	padding-left: 10px; */
 }
 .kingdom-musics .entry img,
 .kingdom-videos .entry img {
@@ -1710,7 +1726,8 @@ more-from-category a {
 }
 
 .manna-list .content,
-.victory-reports .content {
+.victory-reports .content,
+.tax-programs .content {
 	-moz-column-count:3;
     -moz-column-gap: 3%;
     -moz-column-width: 30%;
@@ -1722,7 +1739,8 @@ more-from-category a {
     column-width: 30%;
 }
 .manna-list .entry,
-.victory-reports .entry {
+.victory-reports .entry,
+.tax-programs .entry {
     display: inline-block;
     position: relative;
     margin: 20px 10px;
@@ -1829,6 +1847,26 @@ more-from-category a {
 	-o-transform: scale(2) rotate(360deg);
 	-ms-transform: scale(2) rotate(360deg);
 	transform: scale(2) rotate(360deg);
+}
+
+/* Post */
+.single .entry iframe,
+.single p iframe {
+    width: 100%;
+    height: 480px;
+}
+.single .pagination {
+	display: none;
+}
+.single .entry {
+    margin: 0;
+    padding: 0;
+}
+.single .entry .entry-title {
+    text-align: left;
+}
+.single .entry-title a {
+    font-size: 20px;
 }
 
 /* # Media Queries
