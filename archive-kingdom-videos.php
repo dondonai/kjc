@@ -21,7 +21,11 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 add_action( 'genesis_loop', 'kjc_kingdom_videos' );
 
 function kjc_kingdom_videos() {
-$custom_terms = get_terms('programs');
+$custom_terms = get_terms('programs', array(
+		'orderby' => 'id',
+		// 'order' => 'DESC',
+		'hide_empty' => 0
+	));
 foreach($custom_terms as $custom_term) {
 	    	
 	    wp_reset_query();

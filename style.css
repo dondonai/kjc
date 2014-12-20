@@ -1336,7 +1336,7 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background: #084E85; /* Old browsers */
+	background: #084E87; /* Old browsers */
 	padding-top: 40px;
 	border-top: 5px solid #ccc;
 }
@@ -1354,7 +1354,7 @@ li.comment {
 
 .footer-widgets a.button,
 .footer-widgets a:hover {
-	color: #1018DA;
+	border-bottom: 1px solid #fff;
 }
 
 .footer-widgets li {
@@ -1621,7 +1621,7 @@ transform: scale(1);
 /* Streaming */
 
 .bitgravity {
-    max-width: 620px;
+    max-width: 590px;
     display: inline-block;
     position: relative;
     padding-left: 20px;
@@ -1630,13 +1630,14 @@ transform: scale(1);
     color: rgba( 255, 255, 255, 0.8);
     text-shadow: 0 1px 1px #0b3a84;
     position: absolute;
-    right: -15px;
+    right: -30px;
     top: -15px;
 	cursor: pointer;
     z-index: 999;
 }
 .bitgravity iframe {
     background: #000;
+    /* margin-left: 20px; */
 }
 .call-to-action {
     width: 475px;
@@ -1721,7 +1722,9 @@ transform: scale(1);
 .kingdom-musics .entry-title,
 .kingdom-videos .entry-title {
 	font-size: 20px;
-	text-align: center;
+	/* text-align: center; */
+	border-left: 5px solid #084E87;
+	padding-left: 5px;
 }
 .tax-programs .entry-title {
 	text-align: left;
@@ -1774,7 +1777,7 @@ transform: scale(1);
 .singer.entry-title,
 .program.entry-title,
 .manna.entry-title{
-    padding: 0 30px;
+    padding: 20px 30px 0;
 }
 
 /* Category Archive */
@@ -1920,6 +1923,8 @@ transform: scale(1);
 	-o-filter: grayscale(0);
 	-ms-filter: grayscale(0);
   	filter: grayscale(0);
+    position: relative;
+    z-index: 999;
 }
 
 /* Post */
@@ -1940,6 +1945,12 @@ transform: scale(1);
 }
 .single .entry-title a {
     font-size: 20px;
+}
+
+.tax-singers #flags,
+.tax-programs #flags,
+.post-type-archive-download #flags {
+	display: none;
 }
 
 /* # Media Queries

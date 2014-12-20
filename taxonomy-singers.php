@@ -39,7 +39,10 @@ function kjc_related_posts() {
 	echo '<section class="related-posts">';
 	echo '<h4 class="post-title">You might also want to check:</h4>';
 	echo '<ul class="lists-of-singers">';
-	$custom_terms = get_terms('singers');
+	$custom_terms = get_terms('singers', array(
+			'orderby' => 'id',
+			'hide_empty' => 0
+	));
 	foreach($custom_terms as $custom_term) {
 	    
 	    wp_reset_query();
@@ -47,7 +50,6 @@ function kjc_related_posts() {
 	    $term_link = get_term_link( $custom_term );
 
 	    $args = array(
-		    	'orderby' => 'rand',
 	    		'post_type' => 'kingdom-musics',
 
 	        'tax_query' => array(
