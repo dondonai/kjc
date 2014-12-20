@@ -38,9 +38,13 @@ function child_do_custom_loop() {
 // remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_entry_header', 'dd_tax_programs' );
 function dd_tax_programs() {
+<<<<<<< HEAD
 	echo '<a href="'. get_the_permalink() .'" title="'. get_the_title() .'">';
 		the_post_thumbnail();
 	echo '</a>';
+=======
+	the_post_thumbnail();
+>>>>>>> 722eac2add4b940a63e12813a1c3e119b726df98
 	genesis_post_title();
 }
 

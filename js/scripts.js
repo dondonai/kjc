@@ -1,3 +1,4 @@
+
 jQuery(document).ready( function( $ ) {
 
 $('.site-header').backstretch( templateDir + "/images/bg.jpg");

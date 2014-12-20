@@ -20,7 +20,6 @@ function dd_google_fonts() {
 	// wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
 	// wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
 
-
 }
 
 //* Add HTML5 markup structure

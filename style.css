@@ -465,7 +465,6 @@ th {
 .home .site-inner .wrap {
 	background: transparent;
 }
-
 /* ## Column Widths and Positions
 --------------------------------------------- */
 
@@ -1500,8 +1499,7 @@ div#genesis-responsive-slider {
 	-moz-transform: scale(1);
 	-webkit-transform: scale(1);
 	-o-transform: scale(1);
-	-ms-transform: scale(1);
-	
+	-ms-transform: scale(1);	
 transform: scale(1);
 }
 .home-sections .entry-title {
@@ -1534,7 +1532,6 @@ transform: scale(1);
 	letter-spacing: -3px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
-
 	/* transform: scale(1.5); */
 }
 .home-sections .entry-title .fa {
@@ -1715,7 +1712,6 @@ transform: scale(1);
 .kingdom-musics .entry,
 .kingdom-videos .entry {
     display: inline-block;
-	
     padding: 20px 30px;
 }
 /* .kingdom-musics .entry:last-child {
