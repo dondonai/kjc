@@ -52,12 +52,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 ));
 
 add_filter('widget_text', 'do_shortcode');
-
-// add_filter('genesis_footer_creds_text', 'dd_footer_creds_filter');
-// function dd_footer_creds_filter( $creds ) {
-// 	$creds = 'Copyright [footer_copyright] &middot; The Kingdom of Jesus Christ The Name Above Every Name &middot; All rights reserved.';
-// 	return $creds;
-// }
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 
 add_filter( 'comment_form_defaults', 'dd_custom_comment_form' );
@@ -152,26 +146,6 @@ function dd_post_type() {
 			'hierarchical' => true
 		)
 	);
-
-	// Kingdom Upclose
-	// register_post_type( 'kingdom-upclose',
-	// 	array(
-	// 		'labels' => array(
-	// 			'name' => __( 'Upclose' ),
-	// 			'singular_name' => __( 'Upclose' ),
-	// 			'add_new_item' => "Add New Upclose",
-	// 			'add_new' => "Add New Upclose"
-	// 		),
-	// 		'public' => true,
-	// 		'has_archive' => true,
-	// 		'rewrite' => array('slug' => 'kingdom-videos'),
-	// 		'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
-	// 		'menu_icon' => 'dashicons-video-alt2',
-	// 		'menu_position' => 5,
-	// 		// 'taxonomies' => array('category', 'post_tag'),
-	// 		'hierarchical' => true
-	// 	)
-	// );
 
 	// Add new taxonomy
 
@@ -269,65 +243,11 @@ function remove_editor_init() {
     }
 }
 
-// add_action( 'genesis_entry_header', 'kjc_lang' );
-function kjc_lang() {
-	// echo do_shortcode( '[lang us="true" ukraine="true" japanese="true" chinese="true"]' );
-	$link = get_the_permalink();
-	$trimmed = rtrim( $link, '/' );
-	$stylesheet = get_bloginfo( 'stylesheet_directory' );
-
-	// substr_replace($link, '', -1);
-	// substchar
-
-	?>
-		<div class="languages">
-			<ul class="lang-list">
-				<li class="lang-version"><a href="<?php echo mb_substitute_character( $link, ' ', -1 ); ?>" title="English"><img src="<?php echo $stylesheet; ?>/images/usa.png" alt="usa"></a></li>
-				<li class="lang-version"><a href="<?php echo $trimmed . '-ukraine/'; ?>" title="Ukraine"><img src="<?php echo $stylesheet; ?>/images/ukraine.png" alt="usa"></a></li>
-				<li class="lang-version"><a href="<?php echo $trimmed . '-japanese/'; ?>" title="Japanese"><img src="<?php echo $stylesheet; ?>/images/japan.png" alt="usa"></a></li>
-				<li class="lang-version"><a href="<?php echo $trimmed . '-chinese/'; ?>" title="Chinese"><img src="<?php echo $stylesheet; ?>/images/china.png" alt="usa"></a></li>
-				<li class="lang-version"><a href="<?php echo $trimmed . '-french/'; ?>" title="French"><img src="<?php echo $stylesheet; ?>/images/france.png" alt="usa"></a></li>
-			</ul>
-		</div>
-
-	<?php
-}
-
 add_action( 'genesis_entry_header', 'kjc_languages', 12 );
 function kjc_languages() {
 	// echo do_shortcode( '[lang chinese french japanese="//devsites/kjc/trial-by-fire-japanese/" ukraine="//devsites/kjc/trial-by-fire-ukraine/" english="//devsites/kjc/trial-by-fire/"]' );
 	echo do_shortcode('[google-translator]');
 }
-
-function lang_shortcode($atts){
-
-	$stylesheet = get_bloginfo( 'stylesheet_directory' );
-	extract(shortcode_atts(array(
-	  'chinese' => '#',
-	  'french' => '#',
-	  'japanese' => '#',
-	  'ukraine' => '#',
-	  'english' => '#'
-	), $atts));
-
-   $return_string = '<ul class="lang-list">';
-   
-   if( strlen($chinese) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $chinese .'"><img src="'. $stylesheet .'/images/china.png" alt=""></a></li>';   	
-
-   if( strlen($french) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $french .'"><img src="'. $stylesheet .'/images/france.png" alt=""></a></li>';
-
-   if( strlen($japanese) > 2 ) $return_string .= '<li class="lang-version"><a href="'. $japanese .'"><img src="'. $stylesheet .'/images/japan.png" alt=""></a></li>';
-   
-   if( strlen($ukraine) > 2) $return_string .= '<li class="lang-version"><a href="'. $ukraine .'"><img src="'. $stylesheet .'/images/ukraine.png" alt=""></a></li>';
-   
-   if( strlen($english) > 2) $return_string .= '<li class="lang-version"><a href="'. $english .'"><img src="'. $stylesheet .'/images/usa.png" alt=""></a></li>';
-
-   $return_string .= '</ul>';
-
-   return $return_string;
-}
-
-add_shortcode('lang', 'lang_shortcode');
 
 add_action( 'genesis_meta', 'dd_tempDir', 20 );
 function dd_tempDir() {
@@ -340,8 +260,8 @@ function dd_tempDir() {
 	<?php
 }
 
-add_action( 'wp_head', 'cjfi_favicon');
-function cjfi_favicon() {
+add_action( 'wp_head', 'kjc_favicon');
+function kjc_favicon() {
 
 	?>
 
@@ -357,7 +277,7 @@ function cjfi_favicon() {
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('url'); ?>/favicons/apple-touch-icon-76x76.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('url'); ?>/favicons/apple-touch-icon-152x152.png" />
 	<!-- Windows 8 Tile Icons -->
-    	<meta name="msapplication-square70x70logo" content="<?php bloginfo('url'); ?>/favicons/smalltile.png" />
+  <meta name="msapplication-square70x70logo" content="<?php bloginfo('url'); ?>/favicons/smalltile.png" />
 	<meta name="msapplication-square150x150logo" content="<?php bloginfo('url'); ?>/favicons/mediumtile.png" />
 	<meta name="msapplication-wide310x150logo" content="<?php bloginfo('url'); ?>/favicons/widetile.png" />
 	<meta name="msapplication-square310x310logo" content="<?php bloginfo('url'); ?>/favicons/largetile.png" />
