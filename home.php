@@ -25,7 +25,7 @@ function dd_custom_loop() {
 	?>
 		<div class="bitgravity four-sixths first">
 			<i class="fa fa-times-circle" title="Close Streaming"></i>
-			<iframe src="" scrolling=no frameborder=0 width="620" height="410"><a href="?width=620&height=410&streamType=live&AutoPlay=true&ScrubMode=simple&BufferTime=1.5&AutoBitrate=off&scaleMode=letterbox&DefaultRatio=1.777778&LogoPosition=topleft&ColorBase=0&ColorControl=14277081&ColorHighlight=16777215&ColorFeature=14277081&selectedIndex=0">Play</a></iframe>	
+			<iframe src="" scrolling=no frameborder=0 width="590" height="390"><a href="?width=590&height=390&streamType=live&AutoPlay=true&ScrubMode=simple&BufferTime=1.5&AutoBitrate=off&scaleMode=letterbox&DefaultRatio=1.777778&LogoPosition=topleft&ColorBase=0&ColorControl=14277081&ColorHighlight=16777215&ColorFeature=14277081&selectedIndex=0">Play</a></iframe>	
 		</div>
 
 	<?php			

@@ -19,9 +19,13 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 add_action( 'genesis_loop', 'kjc_kingdom_musics' );
+// add_action( 'genesis_after_loop', 'kjc_music_archive' );
 
 function kjc_kingdom_musics() {
-$custom_terms = get_terms('singers');
+$custom_terms = get_terms('singers', array(
+		'orderby' => 'id',
+		'hide_empty' => 0
+	));
 foreach($custom_terms as $custom_term) {
 	    
 	    wp_reset_query();
@@ -58,6 +62,48 @@ foreach($custom_terms as $custom_term) {
 	}
 }
 
+function kjc_music_archive() {
+	// get the currently queried taxonomy term, for use later in the template file
+	$terms = get_terms( 'singers', array(
+	    'orderby'    => 'id',
+	    'hide_empty' => 0
+	) );
 
+	// now run a query for each animal family
+// now run a query for each animal family
+foreach( $terms as $term ) {
+ 		
+ 		$term_link = get_term_link( $custom_term );
+    // Define the query
+    $args = array(
+        'post_type' => 'kingdom-music',
+        'singers' => $term->slug
+    );
+    $query = new WP_Query( $args );
+             
+    // output the term name in a heading tag                
+    echo'<h2>' . $term->name . '</h2>';
+     
+    // output the post titles in a list
+    echo '<ul>';
+     
+        // Start the Loop
+        while ( $query->have_posts() ) : $query->the_post(); ?>
+ 
+        <li class="animal-listing" id="post-<?php the_ID(); ?>">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </li>
+         
+        <?php endwhile;
+     
+    echo '</ul>';
+     
+    // use reset postdata to restore orginal query
+    wp_reset_postdata();
+ 
+}
+
+
+}
 
 genesis();

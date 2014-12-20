@@ -104,9 +104,9 @@ function dd_post_type() {
 			'supports' => array( 'title', 'editor', 'genesis-seo', 'thumbnail' ),
 			'menu_icon' => 'dashicons-format-audio',
 			'menu_position' => 5,
-			// 'taxonomies' => array('singer'),
-			'hierarchical' => true,
-			'capability_type' => 'post',
+			// 'taxonomies' => array('post_tag', 'category'),
+			'hierarchical' => false,
+			// 'capability_type' => 'post',
 			'yarpp_support' => true
 		)
 	);
@@ -127,8 +127,8 @@ function dd_post_type() {
 			'menu_icon' => 'dashicons-video-alt2',
 			'menu_position' => 5,
 			// 'taxonomies' => array('category', 'post_tag'),
-			'hierarchical' => true,
-			'capability_type' => 'post',
+			'hierarchical' => false,
+			// 'capability_type' => 'post',
 			'yarpp_support' => true
 		)
 
@@ -177,10 +177,12 @@ function dd_post_type() {
 	// Add new taxonomy
 
 	// Singer taxonomy
-	register_taxonomy( 'singers',array (
-					  0 => 'kingdom-musics',
-					),
-		array( 'hierarchical' => true,
+	register_taxonomy( 'singers', array ( 'kingdom-musics', 'post' ),
+		array( 
+			'hierarchical' => true,
+			'sort' => true,
+			'args' => array('orderby' => 'term_order'),
+			'rewrite' => array( 'slug' => 'singers' ),
 			'label' => 'Singers',
 			'show_ui' => true,
 			'query_var' => true,
@@ -193,10 +195,12 @@ function dd_post_type() {
 	);
 
 	// Video taxonomy
-	register_taxonomy( 'programs',array (
-					  0 => 'kingdom-videos',
-					),
-		array( 'hierarchical' => true,
+	register_taxonomy( 'programs',array ( 'kingdom-videos', 'post' ),
+		array( 
+			'hierarchical' => true,
+			'sort' => true,
+			'args' => array('orderby' => 'term_order'),
+			'rewrite' => array('slug' => 'programs' ),
 			'label' => 'Programs',
 			'show_ui' => true,
 			'query_var' => true,
