@@ -2,7 +2,9 @@
 jQuery(document).ready( function( $ ) {
 
 $('.site-header').backstretch( templateDir + "/images/bg.jpg");
-$.backstretch( "http://kojc.net/kojc/wp-content/uploads/2014/12/Seasons-Greetings-final1.jpg" );
+$.backstretch( "http://www.kingdomofjesuschrist.org/wp-content/uploads/2015/01/KICT-2015-Jan.jpg" );
+// $.backstretch( templateDir + "/images/KICT-2015-Jan.jpg" );
+
 
 $('.menu-primary > .menu-item:last-child').after('<div class="responsive-menu"><i class="fa fa-navicon"></i></div>');
 $('.responsive-menu').on('click', function() {
