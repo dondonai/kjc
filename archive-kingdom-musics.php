@@ -31,7 +31,6 @@ foreach($custom_terms as $custom_term) {
 	    wp_reset_query();
 
 	    $term_link = get_term_link( $custom_term );
-
 	    $args = array(
 	    		'orderby' => 'rand',
 	    		'post_type' => 'kingdom-musics',

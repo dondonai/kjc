@@ -9,15 +9,13 @@ function dd_custom_loop() {
 
 	echo '<div class="home-featured"><div class="wrap">';
 
-		// genesis_widget_area( 'home-slider', array(
-		// 	'before' => '<div class="home-slider widget-area">',
-		// 	'after' => '</div>'
-		// ));
+		genesis_widget_area( 'home-slider', array(
+			'before' => '<div class="home-banner-mobile widget-area">',
+			'after' => '</div>'
+		));
 		echo '<div class="home-slider widget-area">';
 			echo do_shortcode( '[royalslider id="1"]' );
 		echo '</div>';
-
-		
 
 	echo '</div></div>';
 

@@ -48,10 +48,8 @@ function kjc_related_posts() {
 	    wp_reset_query();
 
 	    $term_link = get_term_link( $custom_term );
-
 	    $args = array(
 	    		'post_type' => 'kingdom-musics',
-
 	        'tax_query' => array(
 	            array(
 	                'taxonomy' => 'singers',

@@ -11,15 +11,12 @@ define( 'CHILD_THEME_VERSION', '2.1.0' );
 add_action( 'wp_enqueue_scripts', 'dd_google_fonts' );
 function dd_google_fonts() {
 
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
-	// wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
-
-	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION );
-	wp_enqueue_script( 'backstretch', '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js', array( 'jquery' ), CHILD_THEME_VERSION );
-	// wp_enqueue_script( 'dd_history', get_bloginfo( 'stylesheet_directory' ). '/js/history.js', array( 'jquery' ), CHILD_THEME_VERSION );
-	// wp_enqueue_script( 'dd_ajax', get_bloginfo( 'stylesheet_directory' ). '/js/ajax.js', array( 'jquery' ), CHILD_THEME_VERSION );
-
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400|Dosis:300,400|Droid+Serif:400,700|Open+Sans:400,300', array(), CHILD_THEME_VERSION, 'screen' );
+	// wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '' );
+	wp_enqueue_style( 'font-awesome', get_bloginfo( 'stylesheet_directory' ). '/css/font-awesome.min.css', array(), CHILD_THEME_VERSION, 'screen' );
+	
+	wp_enqueue_script( 'dd_scripts', get_bloginfo( 'stylesheet_directory' ). '/js/scripts.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'backstretch', '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js', array( 'jquery' ), '2.0.4', true );
 }
 
 //* Add HTML5 markup structure
@@ -35,6 +32,7 @@ add_theme_support( 'custom-background' );
 // add_theme_support( 'genesis-footer-widgets', 3 );
 
 add_image_size( 'download thumbnail', 100, 100, array( 'top', 'center' ) );
+add_image_size( 'mobile banner', 480, 186 );
 
 // Remove layouts
 genesis_unregister_layout( 'sidebar-content' );
@@ -285,3 +283,29 @@ function kjc_favicon() {
 
 	<?php
 }
+
+add_filter( 'genesis_breadcrumb_args', 'sp_breadcrumb_args' );
+function sp_breadcrumb_args( $args ) {
+	$args['home'] = 'Home';
+	$args['sep'] = ' <i class="fa fa-angle-double-right"></i> ';
+	$args['list_sep'] = ', '; // Genesis 1.5 and later
+	$args['prefix'] = '<h4 class="breadcrumb"><i class="fa fa-arrow-circle-o-right"></i> ';
+	$args['suffix'] = '</h4>';
+	$args['heirarchial_attachments'] = true; // Genesis 1.5 and later
+	$args['heirarchial_categories'] = true; // Genesis 1.5 and later
+	$args['display'] = true;
+	$args['labels']['prefix'] = '';
+	$args['labels']['author'] = 'Archives for ';
+	$args['labels']['category'] = 'Archives for '; // Genesis 1.6 and later
+	$args['labels']['tag'] = 'Archives for ';
+	$args['labels']['date'] = 'Archives for ';
+	$args['labels']['search'] = 'Search for ';
+	$args['labels']['tax'] = 'Archives for ';
+	$args['labels']['post_type'] = 'Archives for ';
+	$args['labels']['404'] = 'Not found: '; // Genesis 1.5 and later
+	return $args;
+}
+function be_remove_title_from_single_crumb( $crumb, $args ) {
+	return substr( $crumb, 0, strrpos( $crumb, $args['sep'] ) );
+}
+add_filter( 'genesis_single_crumb', 'be_remove_title_from_single_crumb', 10, 2 );
