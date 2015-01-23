@@ -2,11 +2,11 @@
 jQuery(document).ready( function( $ ) {
 
 $('.site-header').backstretch( templateDir + "/images/bg.jpg");
-$.backstretch( "http://www.kingdomofjesuschrist.org/wp-content/uploads/2015/01/KICT-2015-Jan.jpg" );
-// $.backstretch( templateDir + "/images/KICT-2015-Jan.jpg" );
+// $.backstretch( "http://www.kingdomofjesuschrist.org/wp-content/uploads/2015/01/KICT-2015-Jan.jpg" );
+$.backstretch( templateDir + "/images/KICT-2015-Jan.jpg" );
 
 
-$('.menu-primary > .menu-item:last-child').after('<div class="responsive-menu"><i class="fa fa-navicon"></i></div>');
+$('.site-header').after('<div class="navicon"><i class="fa fa-navicon"></i></div>');
 $('.responsive-menu').on('click', function() {
 	$('.menu-primary .menu-item a').slideToggle();
 });
@@ -31,31 +31,35 @@ $( '.livetv a, .fa-times-circle' ).on( 'click', function( e ) {
 	});
 
 // Sticky menu
-$( window ).scroll( function () {
-	
-	var $nav_primary = $('.nav-primary'),
-	$sticky = $('.menu-primary'),
-	$nav_offset = $nav_primary.offset().top + $nav_primary.height(),
-	$win_middle = $('.site-inner').height() / 2,
-	$win_scrolltop = $( window ).scrollTop();
 
-	if( $win_scrolltop >= $nav_offset ) {
-		$sticky.addClass('sticky');
-		$('.menu-primary .menu-item a').hide();
-		$('.genesis-nav-menu').css('line-height', '0');
-		$('.responsive-menu').show();
+var nav_secondary = $('.nav-secondary'),
+	subnav_height = nav_secondary.height(),
+	nav_height = $('.nav-primary').height(),
+	header_wrap = $('.site-header .wrap');
+
+$('.nav-secondary').css('top', '-' + subnav_height + 'px');
+
+$( document ).scroll( function () {
+
+	var nav_offset_top = header_wrap.height() + nav_height + 80;
+
+	if($(window).scrollTop() > nav_offset_top) {
+		sticky_nav_in();
 	} else {
-		$sticky.removeClass('sticky');
-		$('.menu-primary .menu-item a').fadeIn();
-		$('.genesis-nav-menu').css('line-height', '1');
-		$('.responsive-menu').hide();
+		sticky_nav_out();
 	}
 
-	if( $win_scrolltop >= $win_middle ) {
-		$backtotop.fadeIn();
-	} else {
-		$backtotop.fadeOut();
-	}
+});
+
+sticky_nav_in = function() {
+	$('.nav-secondary').css({'top': '0', 'opacity': '.98'});
+}
+sticky_nav_out = function() {
+	$('.nav-secondary').css({'top': '-' + subnav_height + 'px', 'opacity': '0'});
+}
+
+$('.navicon').on('click', function() {
+	$('.nav-primary').fadeToggle();
 });
 
 	// Back to top
